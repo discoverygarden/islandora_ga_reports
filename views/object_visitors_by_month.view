@@ -52,6 +52,11 @@ $handler->display->display_options['fields']['visits']['id'] = 'visits';
 $handler->display->display_options['fields']['visits']['table'] = 'google_analytics';
 $handler->display->display_options['fields']['visits']['field'] = 'visits';
 $handler->display->display_options['fields']['visits']['label'] = 'Visits';
+/* Sort criterion: Session Metrics: ga:visits */
+$handler->display->display_options['sorts']['visits']['id'] = 'visits';
+$handler->display->display_options['sorts']['visits']['table'] = 'google_analytics';
+$handler->display->display_options['sorts']['visits']['field'] = 'visits';
+$handler->display->display_options['sorts']['visits']['order'] = 'DESC';
 /* Contextual filter: Page Tracking Dimensions: ga:pagePath */
 $handler->display->display_options['arguments']['pagePath']['id'] = 'pagePath';
 $handler->display->display_options['arguments']['pagePath']['table'] = 'google_analytics';
