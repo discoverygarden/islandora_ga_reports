@@ -42,12 +42,8 @@
           }
         }
       }
-        
-        
-              _gaq.push(['_trackPageview', trackPageViewString]);      _gaq.push(["_setAccount", ""]);       }
-    }
+         _gaq.push(['_trackPageview', trackPageViewString]);      _gaq.push(["_setAccount", ""]);     }
+    
   };
 
 })(jQuery);
-
-
