@@ -55,7 +55,7 @@ $handler->display->display_options['style_options']['info'] = array(
 $handler->display->display_options['fields']['search']['id'] = 'searchKeyword';
 $handler->display->display_options['fields']['search']['table'] = 'google_analytics';
 $handler->display->display_options['fields']['search']['field'] = 'searchKeyword';
-$handler->display->display_options['fields']['search']['label'] = 'Search Term';
+$handler->display->display_options['fields']['search']['label'] = 'Search Terms';
 /* Field: Page Tracking Metrics: ga:searchResultViews */
 $handler->display->display_options['fields']['pageviews']['id'] = 'searchResultViews';
 $handler->display->display_options['fields']['pageviews']['table'] = 'google_analytics';
