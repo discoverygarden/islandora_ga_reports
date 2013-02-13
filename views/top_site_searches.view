@@ -55,12 +55,12 @@ $handler->display->display_options['style_options']['info'] = array(
 $handler->display->display_options['fields']['search']['id'] = 'searchKeyword';
 $handler->display->display_options['fields']['search']['table'] = 'google_analytics';
 $handler->display->display_options['fields']['search']['field'] = 'searchKeyword';
-$handler->display->display_options['fields']['search']['label'] = 'Search';
+$handler->display->display_options['fields']['search']['label'] = 'Search Term';
 /* Field: Page Tracking Metrics: ga:searchResultViews */
 $handler->display->display_options['fields']['pageviews']['id'] = 'searchResultViews';
 $handler->display->display_options['fields']['pageviews']['table'] = 'google_analytics';
 $handler->display->display_options['fields']['pageviews']['field'] = 'searchResultViews';
-$handler->display->display_options['fields']['pageviews']['label'] = 'Downloads';
+$handler->display->display_options['fields']['pageviews']['label'] = '# of Searches';
 /* Sort criterion: Page Tracking Metrics: ga:searchResultViews */
 $handler->display->display_options['sorts']['searchResultViews']['id'] = 'searchResultViews';
 $handler->display->display_options['sorts']['searchResultViews']['table'] = 'google_analytics';
