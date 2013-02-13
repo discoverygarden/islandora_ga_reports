@@ -45,8 +45,9 @@
         
         //concatenate all of the facet terms to the trackpageview variable
         if (facetArray) {
-          for (var j = 0; j < facetArray.length;j++) {
-            trackPageViewString = trackPageViewString.concat('&c='+facetArray[j]);
+          trackPageViewString = trackPageViewString.concat('&c='+facetArray[0]);
+          for (var j = 1; j < facetArray.length;j++) {
+            trackPageViewString = trackPageViewString.concat('+'+facetArray[j]);
           }
         }
                    _gaq.push(['_trackPageview', trackPageViewString]);        _gaq.push(["_setAccount", ""]); 
