@@ -8,7 +8,7 @@
       });
       
       //this is for the google analytics to track site searches
-      var path = window.location.pathname;      if (path.indexOf("islandora/search") != -1) {
+      var path = window.location.pathname;      if (path.indexOf("drupal7/islandora/search") != -1) {
         //decode the url        
         path = decodeURIComponent(path);
         //initialize the trackPageView
@@ -36,7 +36,7 @@
         if (!result ) {
            //regular expression for simple search
           //var basicRegex = new RegExp("/islandora/search/(.+)*\?type");
-          var basicRegex =new RegExp("/islandora/search/([^/]*)/?(.*)?");
+           var basicRegex =new RegExp(/earch\/(.*?)\?/);
           //try and match the simple search
           var result = path.match(basicRegex);
           //we want to strip out the ? after the search term
