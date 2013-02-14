@@ -29,7 +29,7 @@
         }
         
         //regular expression for simple search
-        var basicRegex = new RegExp(/islandora\/search\/([^}]*)\?/);
+        var basicRegex = new RegExp("/islandora/search/(.+)*\?type");
         //try and match the simple search
         var result = path.match(basicRegex);
         
@@ -38,6 +38,10 @@
           //regular expression for advanced search
           var advancedRegex = new RegExp(/\((.*?)\)/);
           var result = path.match(advancedRegex);
+        }
+        else{
+          //we want to strip out the ? after the search term
+          result[1] = result[1].replace(/\?/g,'');  
         }
         
         //concatenate the search term to the trackpageview variable
@@ -55,3 +59,4 @@
   };
 
 })(jQuery);
+(.*?)
