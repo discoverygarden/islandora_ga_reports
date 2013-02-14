@@ -8,7 +8,7 @@
       });
       
       //this is for the google analytics to track site searches
-      var path = window.location.pathname;      if (path.indexOf("drupal7/islandora/search") != -1) {
+      var path = window.location.pathname;      if (path.indexOf("islandora/search") != -1) {
         //decode the url        
         path = decodeURIComponent(path);
         //initialize the trackPageView
