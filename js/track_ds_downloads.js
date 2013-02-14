@@ -28,20 +28,19 @@
           }
         }
         
-        //regular expression for simple search
-        var basicRegex = new RegExp("/islandora/search/(.+)*\?type");
-        //try and match the simple search
-        var result = path.match(basicRegex);
-        
+        //regular expression for advanced search
+        var advancedRegex = new RegExp(/\((.*?)\)/);
+        var result = path.match(advancedRegex);
+                
         //if there is no result try the advanced regular expression
         if (!result ) {
-          //regular expression for advanced search
-          var advancedRegex = new RegExp(/\((.*?)\)/);
-          var result = path.match(advancedRegex);
-        }
-        else{
+           //regular expression for simple search
+          //var basicRegex = new RegExp("/islandora/search/(.+)*\?type");
+          var basicRegex =new RegExp("/islandora/search/([^/]*)/?(.*)?");
+          //try and match the simple search
+          var result = path.match(basicRegex);
           //we want to strip out the ? after the search term
-          result[1] = result[1].replace(/\?/g,'');  
+          //result[1] = result[1].replace(/\?/g,'');  
         }
         
         //concatenate the search term to the trackpageview variable
