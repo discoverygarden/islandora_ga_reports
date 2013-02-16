@@ -6,7 +6,7 @@
         var url = $(this).attr('href');
         _gaq.push(['_trackPageview', url]);
       });
-      
+
       //this is for the google analytics to track site searches
       var path = window.location.pathname;      if (path.indexOf("islandora/search") != -1) {
         //decode the url        
@@ -20,20 +20,18 @@
                 
         //if there is no result try the advanced regular expression
         if (!result ) {
-           //regular expression for simple search
-          //var basicRegex = new RegExp("/islandora/search/(.+)*\?type");
-           var basicRegex =new RegExp("/islandora/search/([^/]*)/?(.*)?");
+          //regular expression for simple search
+          var basicRegex =new RegExp("/islandora/search/([^/]*)/?(.*)?");
           //try and match the simple search
           var result = path.match(basicRegex);
-          //we want to strip out the ? after the search term
-          //result[1] = result[1].replace(/\?/g,'');  
         }
         
         //concatenate the search term to the trackpageview variable
         trackPageViewString = trackPageViewString.concat('?q='+result[1]);
          
         //we need to replace the " to be # for the regular expression to work
-        facetPath = path.replace(/"/g,'#');
+        var facetPath = decodeURIComponent(window.location.href);
+        var facetPath = facetPath.replace(/"/g,'#');
         
         //regular expression to strip out the facets and push them in an array 
         var facetRegEx = new RegExp(/\#(.*?)\#/g);
@@ -53,7 +51,7 @@
             trackPageViewString = trackPageViewString.concat('+'+facetArray[j]);
           }
         }
-                   _gaq.push(['_trackPageview', trackPageViewString]);        _gaq.push(["_setAccount", ""]); 
+        console.log("Site Search:  " + trackPageViewString);           _gaq.push(['_trackPageview', trackPageViewString]);        _gaq.push(["_setAccount", ""]); 
       }    } 
   };
 
