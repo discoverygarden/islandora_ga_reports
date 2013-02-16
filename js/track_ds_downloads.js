@@ -48,7 +48,7 @@
         if (facetArray) {
           trackPageViewString = trackPageViewString.concat('&c='+facetArray[0]);
           for (var j = 1; j < facetArray.length;j++) {
-            trackPageViewString = trackPageViewString.concat('+'+facetArray[j]);
+            trackPageViewString = trackPageViewString.concat('&c='+facetArray[j]);
           }
         }
         console.log("Site Search:  " + trackPageViewString);           _gaq.push(['_trackPageview', trackPageViewString]);        _gaq.push(["_setAccount", ""]); 
