@@ -4,7 +4,9 @@
     attach: function (context, settings) {
       $('td.datastream-download a').click(function() {
         var url = $(this).attr('href');
-        _gaq.push(['_trackPageview', url]);
+        if (typeof _gaq != null && typeof _gaq != "undefined") {
+          _gaq.push(['_trackPageview', url]);
+        }
       });
 
       //this is for the google analytics to track site searches
@@ -51,7 +53,9 @@
             trackPageViewString = trackPageViewString.concat('&c='+facetArray[j]);
           }
         }
-        console.log("Site Search:  " + trackPageViewString);           _gaq.push(['_trackPageview', trackPageViewString]);        _gaq.push(["_setAccount", ""]); 
+        
+        if (typeof _gaq != null && typeof _gaq != "undefined") {          _gaq.push(['_trackPageview', trackPageViewString]);          _gaq.push(["_setAccount", ""]); 
+        }
       }    } 
   };
 
