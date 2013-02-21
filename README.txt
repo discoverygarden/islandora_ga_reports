@@ -27,6 +27,10 @@ CONFIGURATION
 Grant access to Google Analytics Reports to Google Analytics data at /admin/config/system/google-analytics-reports using the Google Analytics account
 associated with the site's tracking setup.
 
+For Site search and facets, click on the admin tab on the google analytics site.  Click on the profile link and go to the profile settings.
+Check the "Do track Site Search" and enter q in the query parameter.  To enable the facets to be tracked click on the "Site search categories"
+checkbox and enter c in the category paramneter.  Apply the changes. 
+
 
 CUSTOMIZATION
 -------------
