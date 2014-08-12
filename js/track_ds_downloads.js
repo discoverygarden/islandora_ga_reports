@@ -10,16 +10,17 @@
       });
 
       //this is for the google analytics to track site searches
-      var path = window.location.pathname;      if (path.indexOf("islandora/search") != -1) {
-        //decode the url        
+      var path = window.location.pathname;
+      if (path.indexOf("islandora/search") != -1) {
+        //decode the url
         advancedPath = decodeURIComponent(path);
         //initialize the trackPageView
         var trackPageViewString = '/islandora/search/';
-                
+
         //regular expression for advanced search
         var advancedRegex = new RegExp(/\((.*?)\)/);
         var result = advancedPath.match(advancedRegex);
-                
+
         //if there is no result try the advanced regular expression
         if (!result ) {
           //regular expression for simple search
@@ -29,7 +30,7 @@
         }
         
         //concatenate the search term to the trackpageview variable
-        trackPageViewString = trackPageViewString.concat('?q='+result[1]);
+        trackPageViewString = trackPageViewString.concat('?q=' + (result == null ? '' : result[1]));
          
         //we need to replace the " to be # for the regular expression to work
         var facetPath = decodeURIComponent(window.location.href);
