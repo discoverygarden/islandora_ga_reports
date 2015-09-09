@@ -43,22 +43,22 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
 );
-/* Field: Geo / Network Dimensions: ga:country */
+/* Field: Geo network dimensions: Country / Territory */
 $handler->display->display_options['fields']['country']['id'] = 'country';
 $handler->display->display_options['fields']['country']['table'] = 'google_analytics';
 $handler->display->display_options['fields']['country']['field'] = 'country';
 $handler->display->display_options['fields']['country']['label'] = 'Country';
-/* Field: Session Metrics: ga:visits */
-$handler->display->display_options['fields']['visits']['id'] = 'visits';
-$handler->display->display_options['fields']['visits']['table'] = 'google_analytics';
-$handler->display->display_options['fields']['visits']['field'] = 'visits';
-$handler->display->display_options['fields']['visits']['label'] = 'Visits';
-/* Sort criterion: Session Metrics: ga:visits */
-$handler->display->display_options['sorts']['visits']['id'] = 'visits';
-$handler->display->display_options['sorts']['visits']['table'] = 'google_analytics';
-$handler->display->display_options['sorts']['visits']['field'] = 'visits';
-$handler->display->display_options['sorts']['visits']['order'] = 'DESC';
-/* Contextual filter: Page Tracking Dimensions: ga:pagePath */
+/* Field: Session metrics: Sessions */
+$handler->display->display_options['fields']['sessions']['id'] = 'sessions';
+$handler->display->display_options['fields']['sessions']['table'] = 'google_analytics';
+$handler->display->display_options['fields']['sessions']['field'] = 'sessions';
+$handler->display->display_options['fields']['sessions']['precision'] = '0';
+/* Sort criterion: Session metrics: Sessions */
+$handler->display->display_options['sorts']['sessions']['id'] = 'sessions';
+$handler->display->display_options['sorts']['sessions']['table'] = 'google_analytics';
+$handler->display->display_options['sorts']['sessions']['field'] = 'sessions';
+$handler->display->display_options['sorts']['sessions']['order'] = 'DESC';
+/* Contextual filter: Page tracking dimensions: Page */
 $handler->display->display_options['arguments']['pagePath']['id'] = 'pagePath';
 $handler->display->display_options['arguments']['pagePath']['table'] = 'google_analytics';
 $handler->display->display_options['arguments']['pagePath']['field'] = 'pagePath';
@@ -68,7 +68,7 @@ $handler->display->display_options['arguments']['pagePath']['default_argument_op
 $handler->display->display_options['arguments']['pagePath']['summary']['number_of_records'] = '0';
 $handler->display->display_options['arguments']['pagePath']['summary']['format'] = 'default_summary';
 $handler->display->display_options['arguments']['pagePath']['summary_options']['items_per_page'] = '25';
-/* Filter criterion: Geo / Network Dimensions: ga:country */
+/* Filter criterion: Geo network dimensions: Country / Territory */
 $handler->display->display_options['filters']['country']['id'] = 'country';
 $handler->display->display_options['filters']['country']['table'] = 'google_analytics';
 $handler->display->display_options['filters']['country']['field'] = 'country';
@@ -78,4 +78,20 @@ $handler->display->display_options['filters']['country']['value'] = '(not set)';
 /* Display: Block */
 $handler = $view->new_display('block', 'Block', 'block');
 $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+$translatables['object_visitors_by_country'] = array(
+  t('Master'),
+  t('Object Views By Country'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Country'),
+  t('Sessions'),
+  t('.'),
+  t(','),
+  t('All'),
+  t('Block'),
+);
 
